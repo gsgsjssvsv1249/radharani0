@@ -336,3 +336,62 @@ dialog .btn-dialog-close {
   color: red;
   opacity: 1;
 }
+
+}
+
+/* Sound Control */
+.sound-control {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.sound-toggle {
+  background: var(--card-bg);
+  backdrop-filter: var(--card-blur);
+  border: var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.sound-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.sound-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.sound-toggle .sound-on,
+.sound-toggle .sound-off {
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.sound-toggle[data-muted="true"] .sound-on {
+  opacity: 0;
+}
+
+.sound-toggle[data-muted="true"] .sound-off {
+  opacity: 1;
+}
+
+.sound-toggle[data-muted="false"] .sound-on {
+  opacity: 1;
+}
+
+.sound-toggle[data-muted="false"] .sound-off {
+  opacity: 0;
+}
