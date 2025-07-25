@@ -1,5 +1,41 @@
 console.clear();
 
+// Sound Control
+const tickSound = document.getElementById('tick-sound');
+const soundToggle = document.getElementById('sound-toggle');
+
+// Initialize sound state from localStorage or default to muted
+let isMuted = localStorage.getItem('isMuted') === 'false' ? false : true;
+
+// Set initial volume
+tickSound.volume = 0.2; // Set volume to 20%
+
+updateSoundState();
+
+function updateSoundState() {
+  soundToggle.setAttribute('data-muted', isMuted);
+  if (isMuted) {
+    tickSound.pause();
+  } else {
+    // Ensure volume is set and play
+    tickSound.volume = 0.2;
+    tickSound.play().catch(e => console.log('Audio play failed:', e));
+  }
+  localStorage.setItem('isMuted', isMuted);
+}
+
+soundToggle.addEventListener('click', () => {
+  isMuted = !isMuted;
+  updateSoundState();
+});
+
+// Ensure sound starts playing when user interacts with the page
+document.addEventListener('click', () => {
+  if (!isMuted) {
+    tickSound.volume = 0.2;
+    tickSound.play().catch(e => console.log('Audio play failed:', e));
+  }
+}, { once: true });
 // array of JavaScript supported languages for local dates (not definitive)
 const languageFlags = [
   { code: 'ar-SA', name: 'Arabic (Saudi Arabia)', flag: '🇸🇦' },
