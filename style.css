@@ -348,7 +348,7 @@ dialog .btn-dialog-close {
 }
 
 .sound-toggle {
-  background: var(--card-bg);
+  background: var(--clock-clr);
   backdrop-filter: var(--card-bg);
   border: var(--card-border);
   box-shadow: var(--card-shadow);
