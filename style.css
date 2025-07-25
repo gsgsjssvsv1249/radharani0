@@ -356,8 +356,8 @@ dialog .btn-dialog-close {
   width: 48px;
   height: 48px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   cursor: pointer;
   color: white;
   padding: 0.8rem;
