@@ -342,8 +342,8 @@ dialog .btn-dialog-close {
 /* Sound Control */
 .sound-control {
   position: fixed;
-  bottom: 20rem;
-  right: 20rem;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
 }
 
@@ -359,7 +359,7 @@ dialog .btn-dialog-close {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: black;
+  color: white;
   padding: 0.8rem;
   transition: all 0.3s ease;
 }
