@@ -341,7 +341,7 @@ dialog .btn-dialog-close {
 
 /* Sound Control */
 .sound-control {
-  position: bottom;
+  position: fixed;
   bottom: 20rem;
   right: 20rem;
   z-index: 1000;
